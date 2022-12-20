@@ -1,0 +1,17 @@
+package com.customer.demo.DTO;
+
+public class ErrorResponseDTO {
+	private int statusCode;
+	private String message;
+	public ErrorResponseDTO(int statusCode, String message) {
+		super();
+		this.statusCode = statusCode;
+		this.message = message;
+	}
+	public ErrorResponseDTO() {
+		super();
+	}
+
+	
+	
+}

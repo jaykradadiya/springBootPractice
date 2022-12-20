@@ -1,0 +1,7 @@
+package com.customer.demo;
+
+import com.customer.demo.service.CustomerService;
+
+public class CustomerServiceImp implements CustomerService {
+
+}

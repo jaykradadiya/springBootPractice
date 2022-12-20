@@ -1,0 +1,67 @@
+package com.customer.demo;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
+import com.customer.demo.DTO.CustomerDTO;
+import com.customer.demo.entity.Customer;
+import com.customer.demo.repository.CustomerRepository;
+import com.customer.demo.service.CustomerService;
+
+public class CustomerServiceImp implements CustomerService {
+
+	@Autowired
+	CustomerRepository customerRepository;
+	
+	
+	@Override
+	public Customer customerToCustomerDTO(CustomerDTO customerDTO) {
+		Customer customer = new Customer();
+		
+		if(customerDTO.getId()>0)
+			customer.setId(customerDTO.getId());
+		customer.setAge(customerDTO.getAge());
+		customer.setEmail(customerDTO.getEmail());
+		customer.setName(customerDTO.getName());
+		
+		return customer;
+	}
+
+	@Override
+	public CustomerDTO customerDTOToCustomer(Customer customer) {
+		CustomerDTO customerDTO = new CustomerDTO();
+		customerDTO.setId(customer .getId());
+		customerDTO.setAge(customer.getAge());
+		customerDTO.setName(customer.getName());
+		customerDTO.setEmail(customer.getEmail());
+		return customerDTO;
+	}
+
+	@Override
+	public CustomerDTO findAllById(Integer id) {
+		Customer customer = customerRepository.findById(id).get();
+		return this.customerDTOToCustomer(customer);
+	}
+
+	@Override
+	public CustomerDTO save(CustomerDTO customerDTO) {
+		
+		Customer customer = this.customerToCustomerDTO(customerDTO);
+		customerRepository.save(customer);
+		return this.customerDTOToCustomer(customer);
+	}
+
+	@Override
+	public CustomerDTO updateByID(CustomerDTO customerDTO) {
+		Customer customer = this.customerToCustomerDTO(customerDTO);
+		customerRepository.save(customer);
+		return this.customerDTOToCustomer(customer);
+	}
+
+	@Override
+	public CustomerDTO deleteById(Integer Id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	
+}

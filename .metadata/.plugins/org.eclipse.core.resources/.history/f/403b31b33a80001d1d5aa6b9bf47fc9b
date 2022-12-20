@@ -1,0 +1,8 @@
+spring:
+  main:
+    web-application-type: servlet
+    
+  datasource:
+    url: jdbc:postgresql://localhost:5432/customer
+    username: postgres
+    password: jay

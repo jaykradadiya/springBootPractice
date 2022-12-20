@@ -1,0 +1,19 @@
+package com.customer.demo.service;
+
+import com.customer.demo.DTO.CustomerDTO;
+import com.customer.demo.entity.Customer;
+
+public interface CustomerService {
+	
+	Customer customerToCustomerDTO(CustomerDTO customerDTO);
+	
+	CustomerDTO customerDTOToCustomer(Customer customer);
+	
+	CustomerDTO findAllById(Integer id);
+	
+	CustomerDTO save(CustomerDTO customerDTO);
+	
+	
+	CustomerDTO UpdateByID(CustomerDTO customerDTO);
+	
+}

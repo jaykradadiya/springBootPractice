@@ -1,0 +1,20 @@
+package com.customer.demo.Exception;
+
+import org.springframework.web.bind.annotation.RestControllerAdvice;
+
+import com.customer.demo.DTO.ErrorResponseDTO;
+
+import org.springframework.web.bind.annotation.ExceptionHandler;
+import org.springframework.web.bind.annotation.ResponseStatus;
+
+import org.springframework.http.HttpStatus;
+@RestControllerAdvice
+public class ExceptionHandler {
+
+	@ExceptionHandler(value = Customer.class)
+	@ResponseStatus(HttpStatus.UNAUTHORIZED)
+	public ErrorResponseDTO handleUserServiceException(CustomerServiceException ex) {
+		return new ErrorResponseDTO(HttpStatus.UNAUTHORIZED.value(), ex.getMessage());
+	}
+
+}
