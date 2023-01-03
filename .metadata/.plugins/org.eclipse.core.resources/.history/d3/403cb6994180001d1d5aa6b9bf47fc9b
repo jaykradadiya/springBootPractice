@@ -1,8 +1,0 @@
-package com.customer.demo.Controller;
-
-public class CustomerController {
-	
-	List<CustomerDTO> findAll(){
-		
-	}
-}

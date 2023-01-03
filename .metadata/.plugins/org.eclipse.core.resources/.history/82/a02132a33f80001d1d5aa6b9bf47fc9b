@@ -1,7 +1,0 @@
-package com.customer.demo;
-
-import CustomerService;
-
-public class CustomerServiceImp extends CustomerService {
-
-}

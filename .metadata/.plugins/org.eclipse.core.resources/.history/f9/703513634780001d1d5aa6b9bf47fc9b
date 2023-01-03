@@ -1,9 +1,0 @@
-package com.customer.demo.DTO;
-
-public class ErrorResponseDTO {
-	private int statusCode;
-	private String message;
-
-	
-	
-}

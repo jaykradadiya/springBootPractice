@@ -1,6 +1,0 @@
-package com.customer.demo;
-
-
-public class CustomerServiceImp implements CustomerService {
-
-}
